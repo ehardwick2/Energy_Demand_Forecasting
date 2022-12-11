@@ -9,7 +9,7 @@
 
 ## Data
 
-In this project I used numerous models to forecast hourly demand approximately seven months in advance using four total years of hourly electricity demand data for all of Spain and weather data for five major cities in Spain. Models tested include simple linear regression, Random Forest, KNN, SARIMAX, FB Prophet, and XGBoost.
+In this project I used numerous models to forecast hourly demand approximately seven months in advance using four total years of hourly electricity demand data for all of Spain and weather data for five major cities. Models tested include simple linear regression, Random Forest, KNN, SARIMAX, FB Prophet, and XGBoost.
 
 The datasets I used were obtained from [Kaggle](https://www.kaggle.com/datasets/nicholasjhana/energy-consumption-generation-prices-and-weather) (sourced from Open Weather, ENTSOE transparency platform, and Red Electrica). The energy dataset contained 35064 hourly records with electricity demand, predicted demand, price, predicted price, as well as generation totals by method (solar, fossil gas, fossil coal, wind, etc.) and the weather dataset contained hourly records with temperature, wind speed, humidity, rainfall, snowfall, and other weather descriptor variables for each of five geographically diverse cities in Spain.
 
@@ -21,7 +21,7 @@ One of the most enlightening visuals I created during EDA plotted a time series 
 
 ![image](https://user-images.githubusercontent.com/102127193/206870642-3e261ea2-da6f-427d-b93f-2171ea5c47cf.png)
 
-The EDA process also helped with some outlier detection and I also learned that humidity is an excellent predictor of solar generation. On a daily basis, humidity is high at night when there is no solar generation and low during the day when solar generation is occurring. In the absence of a solar radiation measurement, humidity is an excellent predictor, at least in Spain’s climate.
+The EDA process also helped with some outlier detection and I also learned that humidity is an excellent predictor of solar generation: on a daily basis, humidity is high at night when there is no solar generation and low during the day when solar generation is occurring. In the absence of a solar radiation measurement, humidity is an excellent predictor, at least in Spain’s climate.
 
 **[EDA Notebook](https://github.com/ehardwick2/Capstone2/blob/main/Exploratory_Data_Analysis.ipynb)**
 
@@ -54,4 +54,4 @@ The error metrics are sorted by lowest RMSE, which is the accuracy metric I chos
 Prophet and XGBoost are both good models for long term energy demand forecasting. They both capture the general pattern of the three seasonalities quite well but tend to underpredict peak demands, at least with this dataset. They would be good models to use for general long-term planning of the right energy generation mix, unless there is an overall trend to the data, in which case Prophet should be used. XGBoost wins out on training time though. For forecasts of several hours to a few days ahead, SARIMAX does a good job as long as there are no anomalous events that cause demand to spike or drop. 
 
 ### Further Investigation:
-Due to time constraints, there were only so many model tweaks I could compare, but there are few worth noting that I have not yet investigated. Other avenues with this data that would be interesting to investigate would be to predict the contribution of wind-generated energy given the wind speed and energy price given wind generation, solar generation, and total demand. Energy forecasting is an interesting and important topic in machine learning and although I’ve not even scratched the surface with this project, I’m keen to dive deeper and learn more in the future! 
+Other avenues with this data that would be interesting to investigate would be to predict the contribution of wind-generated energy given the wind speed and energy price given wind generation, solar generation, and total demand. Energy forecasting is an interesting and important topic in machine learning and although I’ve not even scratched the surface with this project, I’m keen to dive deeper and learn more in the future! 
