@@ -41,7 +41,7 @@ I first forecast seven months of energy demand using simple linear regression to
   
 </p>
 
-The error metrics are sorted by lowest RMSE, which is the accuracy metric I chose to use for model comparison over mean absolute error (MAE) or mean absolute percent error (MAPE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors, making RMSE more useful when large errors are undesirable. The lower the RMSE, the more accurate the prediction. Prophet has the lowest RMSE for a six day forcast window and for the seven month forecast window on the test sets.
+The error metrics are sorted by lowest RMSE, which is the accuracy metric I chose to use for model comparison over mean absolute error (MAE) or mean absolute percent error (MAPE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors, making RMSE more useful when large errors are undesirable. The lower the RMSE, the more accurate the prediction. Prophet has the lowest RMSE for a six day forecast window and for the seven month forecast window on the test sets.
 
 <p align="center">
 
